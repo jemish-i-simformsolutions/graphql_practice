@@ -10,20 +10,29 @@ class BookDetail extends React.Component {
     if (this.props.id) {
       if (this.props.data.loading === false) {
         const element = this.props.data.book;
-        return (
-          <div>
-            <li>Book Name: {element.name}</li>
-            <li>Genere: {element.genre}</li>
-            <li>
-              Author Name:
-              {element.author ? element.author.name : "Not available"}
-            </li>
-            <li>
-              Author Age:
-              {element.author ? element.author.age : "Not available"}
-            </li>
-          </div>
-        );
+        if (element !== null) {
+          return (
+            <div>
+              {console.log(this.props.data)}
+              <li>Book Name: {element.name}</li>
+              <li>Genere: {element.genre}</li>
+              <li>
+                Author Name:
+                {element.author ? element.author.name : "Not available"}
+              </li>
+              <li>
+                Author Age:
+                {element.author ? element.author.age : "Not available"}
+              </li>
+            </div>
+          );
+        } else {
+          return (
+            <h3 style={{ color: "silver" }}>
+              Book not available with given Book id...
+            </h3>
+          );
+        }
       }
     }
   }
@@ -32,7 +41,8 @@ class BookDetail extends React.Component {
       <div id="bookdetail">
         <h1>Book details of selected book</h1>
         <ul>
-          {this.showBookDetail()} {console.log(this.props)}
+          {this.showBookDetail()}
+          {/* {console.log(this.props)} */}
         </ul>
       </div>
     );

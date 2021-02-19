@@ -41,7 +41,7 @@ class BookList extends React.Component {
           <h1>BookList</h1>
 
           {this.displayBooks()}
-          {console.log(this.props)}
+          {/* {console.log(this.props)} */}
         </div>
 
         <BookDetail id={this.state.id} />
