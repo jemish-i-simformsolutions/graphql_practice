@@ -19,7 +19,7 @@ var books = [
 ];
 var author = [
   { id: "1", name: "rohan", age: 30 },
-  { id: "2", name: "rakesh", age: 40 },
+  { id: "2", name: "amish", age: 40 },
   { id: "3", name: "mohan", age: 50 },
 ];
 
@@ -32,7 +32,7 @@ const BookType = new GraphQLObjectType({
       id: { type: GraphQLString },
       name: { type: GraphQLString },
       genre: { type: GraphQLString },
-
+      authorId: { type: GraphQLString },
       author: {
         type: AuthorType,
         resolve(parent, args) {
@@ -76,9 +76,18 @@ const Mutation = new GraphQLObjectType({
         name: { type: GraphQLString },
         genre: { type: GraphQLString },
         id: { type: GraphQLString },
+        authorId: { type: GraphQLString },
       },
       resolve(parents, args) {
-        books = [...books, { name: args.name, genre: args.genre, id: args.id }];
+        books = [
+          ...books,
+          {
+            name: args.name,
+            genre: args.genre,
+            id: args.id,
+            authorId: args.authorId,
+          },
+        ];
         return _.find(books, { id: args.id });
       },
     },

@@ -20,13 +20,11 @@ code {
 #bookdetail {
   margin-left: 20px;
   width: 450px;
-  height: 270px;
 }
 #displayaddbook {
   background-color: steelblue;
   margin-left: 20px;
   width: 450px;
-  margin-top: 20px;
   color: aliceblue;
   padding-left: 0.5%;
   padding-bottom: 2%;
@@ -35,7 +33,6 @@ code {
   background-color: steelblue;
   margin-left: 20px;
   width: 450px;
-  height: 250px;
   padding-left: 2%;
 }
 h1 {
@@ -56,4 +53,17 @@ button {
   margin: 7px;
   border: 2px black solid;
   border-radius: 5%;
+}
+#displaygetbookdetail {
+  background-color: steelblue;
+  margin-left: 20px;
+  width: 450px;
+  margin-top: 10px;
+  color: aliceblue;
+  padding-left: 0.5%;
+  padding-bottom: 2%;
+  height: fit-content;
+}
+#detailrandom {
+  height: fit-content;
 }

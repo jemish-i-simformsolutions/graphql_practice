@@ -13,8 +13,10 @@ class AddBook extends React.Component {
       bookName: null,
       genre: null,
       id: null,
+      authorId: null,
     };
   }
+
   addBookfun(event) {
     event.preventDefault();
     this.props.addBookQuery({
@@ -22,6 +24,7 @@ class AddBook extends React.Component {
         name: this.state.bookName,
         genre: this.state.genre,
         id: this.state.id,
+        authorId: this.state.authorId,
       },
       refetchQueries: [{ query: getBooksQuery }],
     });
@@ -65,6 +68,17 @@ class AddBook extends React.Component {
                       id="id"
                       onChange={(event) =>
                         this.setState({ id: event.target.value })
+                      }
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td>AuthorID:</td>
+                  <td>
+                    <input
+                      id="id"
+                      onChange={(event) =>
+                        this.setState({ authorId: event.target.value })
                       }
                     />
                   </td>
