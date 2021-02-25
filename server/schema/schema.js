@@ -63,7 +63,7 @@ const Mutation = new GraphQLObjectType({
       args: {
         name: { type: GraphQLString },
         age: { type: GraphQLInt },
-        id: { type: GraphQLString },
+        id: { type: GraphQLID },
       },
       resolve(parents, args) {
         author = [...author, { name: args.name, age: args.age, id: args.id }];
@@ -93,6 +93,16 @@ const Mutation = new GraphQLObjectType({
     },
   },
 });
+// const Subscription=new GraphQLObjectType({
+//   name:"subscription",
+//   fields:{
+//     addAuthor:{
+//       type:addAuthor,
+//     }
+
+//     }
+//   }
+// });
 const RootQuery = new GraphQLObjectType({
   name: "RootQueryType",
   fields: {
@@ -124,6 +134,7 @@ const RootQuery = new GraphQLObjectType({
     },
   },
 });
+
 module.exports = new GraphQLSchema({
   query: RootQuery,
   mutation: Mutation,

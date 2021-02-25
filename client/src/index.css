@@ -62,8 +62,14 @@ button {
   color: aliceblue;
   padding-left: 0.5%;
   padding-bottom: 2%;
-  height: fit-content;
+  height: auto;
 }
 #detailrandom {
+  width: fit-content;
   height: fit-content;
+}
+#authordetail {
+  display: inline-block;
+  margin-left: 20px;
+  width: 450px;
 }

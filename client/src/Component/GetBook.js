@@ -2,16 +2,6 @@ import React from "react";
 import { graphql, useQuery } from "react-apollo";
 import { getBookDetail } from "../Queries/queries";
 import BookDetail from "./BookDetail";
-function Xyz() {
-  const { data, loading, error } = useQuery(getBookDetail, {
-    variables: { id: 2 },
-  });
-  if (loading === false) {
-    return <>{console.log(data)}</>;
-  } else {
-    return <>Loading.....</>;
-  }
-}
 
 class GetBook extends React.Component {
   constructor(props) {
@@ -45,7 +35,6 @@ class GetBook extends React.Component {
             </form>
           </div>
           <div id="detailrandom">
-            <Xyz />
             <BookDetail id={this.state.id} />
           </div>
         </div>
