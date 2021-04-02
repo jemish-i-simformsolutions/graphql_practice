@@ -6,6 +6,7 @@ function About() {
   const changecolor = useCallback(() => {
     setC((val) => (val == "white" ? "green" : "white"));
   }, [c]);
+  //unstopable
 
   return (
     <div style={{ backgroundColor: `${color}`, color: `${c}` }}>
