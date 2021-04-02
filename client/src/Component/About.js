@@ -17,7 +17,7 @@ function About() {
       >
         click to change color
       </button>
-      {console.log("helloji")}
+      {console.log("helloji123")}
     </div>
   );
 }
